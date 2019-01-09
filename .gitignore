@@ -1,0 +1,7 @@
+.vscode
+.pyc
+__pycache__
+NE2001/bin/NE2001
+*.o
+*.a
+*.egg-info
