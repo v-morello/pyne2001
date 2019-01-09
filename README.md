@@ -54,13 +54,24 @@ LOWERLIM                           If True, ModelDistance is a lower limit only
 
 ### FORTRAN code changes
 
-Bugfixes:
+##### Bugfixes:
+
+- Removed extra space between declared `common` arrays  (`dmdsm.NE2001.f:68`)
+
+- Replaced hardcoded `1` by `1.0` in a call to `max()` that needs to arguments of type float (`dmdsm.NE2001.f:408`)
+
 - Replaced `iargc` by `iargc_` (`NE2001.f:28-29`)
+
 - Replaced obsolete PAUSE statement with a WRITE (`density.NE2001.f:697`)
 
-Changes:
+##### Changes:
+
 - Input files are now all placed in `/bin`. Removed `/input` directory.
+
 - Removed `run_NE2001.pl`
-- FORTRAN code is now compiled with ```-ffpe-summary=none```, which suppresses messages related to floating point exceptions. This makes parsing the output with python easier. (`Makefile`)
+
+- FORTRAN code is now compiled with ```-ffpe-summary=none```, which suppresses messages related to floating point warnings. This makes parsing the output with python easier. (`Makefile`)
+
 - Changed compiler from f77 to gfortran (`Makefile`)
+
 - `make clean` now also deletes `libNE2001.a` (`Makefile`)
