@@ -11,7 +11,7 @@ except ImportError:
 
 def _get_executable_dir():
     thisdir, __ = os.path.split(__file__)
-    path = os.path.join(thisdir, "..", "NE2001", "bin")
+    path = os.path.join(thisdir, "NE2001", "bin")
     return os.path.realpath(path)
 
 

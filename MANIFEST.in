@@ -1,0 +1,14 @@
+global-include *.py 
+global-include *.md
+global-include *.f
+include LICENSE
+include Makefile
+include pyne2001/NE2001/bin/*
+include pyne2001/NE2001/src/Makefile
+include pyne2001/NE2001/src/fort.24
+include pyne2001/NE2001/src/fort.25
+# NOTE: both the executable and the library must
+# be included. When the module is installed with 'pip install',
+# both are built in a temporary dir and THEN are copied to 'site-packages' 
+include pyne2001/NE2001/bin/NE2001
+include pyne2001/NE2001/src/libNE2001.a

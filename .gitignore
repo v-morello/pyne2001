@@ -5,3 +5,4 @@ NE2001/bin/NE2001
 *.o
 *.a
 *.egg-info
+dist
