@@ -46,4 +46,4 @@ upload: ## Upload the distribution source to the REAL PyPI
 tests: ## Run unit tests
 	python -m unittest discover ${TESTS_DIR}
 
-.PHONY: dist install uninstall help clean tests
+.PHONY: dist install uninstall help clean tests upload_test upload
