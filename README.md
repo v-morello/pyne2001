@@ -9,7 +9,7 @@ The python functions implemented in `pyne2001` simply call the NE2001 executable
 
 ### Dependencies and Python version
 
-`pyne2001` works with both python 2.7 and python 3+, and does not depend on any external python libraries. You must have `gfortran` installed to compile the FORTRAN source; if you wish to use another compiler, you will have to install in development mode and edit the `Makefile` under `pyne2001/NE2001/src`.
+`pyne2001` works with both python 2.7 and python 3+, and does not depend on any external python libraries. You must have `gfortran` installed to compile the FORTRAN source; if you wish to use another compiler, you will have to install in development mode (see below) and edit the `Makefile` under `pyne2001/NE2001/src`.
 
 
 ### Installation

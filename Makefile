@@ -37,6 +37,12 @@ clean: ## Remove all python cache and build files
 	rm -rf dist/
 	rm -rf ${PKG}.egg-info/
 
+upload_test: ## Upload the distribution source to the TEST PyPI
+	twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+
+upload: ## Upload the distribution source to the REAL PyPI
+	twine upload dist/*
+
 tests: ## Run unit tests
 	python -m unittest discover ${TESTS_DIR}
 

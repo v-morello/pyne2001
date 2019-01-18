@@ -62,7 +62,7 @@ setup(
     description='A simple python wrapper around the original FORTRAN implementation of the NE2001 Galactic free electron density model',
     long_description=long_description,
     long_description_content_type='text/markdown',
-    version='0.1.0a8',
+    version='0.1.1',
     packages=setuptools.find_packages(),
     install_requires=[],
     license='MIT License',
