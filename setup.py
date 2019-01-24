@@ -49,6 +49,16 @@ class CustomBuildPy(build_py):
         compile_ne2001()
         build_py.run(self)
 
+def parse_version():
+    thisdir = os.path.dirname(__file__)
+    version_file = os.path.join(thisdir, 'pyne2001', '_version.py')
+    with open(version_file, 'r') as fobj:
+        text = fobj.read()
+    items = {}
+    exec(text, None, items)
+    return items['__version__']
+
+version = parse_version()
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
@@ -62,7 +72,7 @@ setup(
     description='A simple python wrapper around the original FORTRAN implementation of the NE2001 Galactic free electron density model',
     long_description=long_description,
     long_description_content_type='text/markdown',
-    version='0.1.1',
+    version=version,
     packages=setuptools.find_packages(),
     install_requires=[],
     license='MIT License',

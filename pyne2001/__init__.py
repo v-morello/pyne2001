@@ -1,3 +1,6 @@
+# NOTE: this must be imported first
+from ._version import __version__
+
 from .core import (
     get_dist, 
     get_dist_full, 
@@ -15,4 +18,5 @@ __all__ = [
     'get_dm_full', 
     'get_galactic_dm',
     'test',
+    '__version__'
     ]
