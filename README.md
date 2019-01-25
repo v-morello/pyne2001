@@ -1,5 +1,7 @@
 # pyne2001
 
+[![Build Status](https://travis-ci.com/v-morello/pyne2001.svg?branch=master)](https://travis-ci.com/v-morello/pyne2001) ![License](https://img.shields.io/pypi/l/pyne2001.svg) ![Python versions](https://img.shields.io/pypi/pyversions/pyne2001.svg)
+
 A python wrapper around the original FORTRAN implementation of the NE2001 Galactic free electron density model, published in the paper  
 [NE2001.I. A New Model for the Galactic Distribution of Free Electrons and its Fluctuations](https://arxiv.org/abs/astro-ph/0207156), by J.M. Cordes and T.J.W. Lazio.
 
@@ -9,7 +11,7 @@ The python functions implemented in `pyne2001` simply call the NE2001 executable
 
 ### Dependencies and Python version
 
-`pyne2001` works with both python 2.7 and python 3+, and does not depend on any external python libraries. You must have `gfortran` installed to compile the FORTRAN source; if you wish to use another compiler, you will have to install in development mode (see below) and edit the `Makefile` under `pyne2001/NE2001/src`.
+`pyne2001` works with both python 2.7 and python 3+, and does not depend on any external python libraries. You must have `gfortran` **version 5 or higher** installed to compile the FORTRAN source, because the compilation flag `-ffpe-summary` is not supported by earlier `gfortran` versions. If you wish to use another compiler, you will have to install in development mode (see below) and edit the `Makefile` under `pyne2001/NE2001/src`. These shortcomings will be fixed in a future release.
 
 
 ### Installation
