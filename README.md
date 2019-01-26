@@ -11,7 +11,7 @@ The python functions implemented in `pyne2001` simply call the NE2001 executable
 
 ### Dependencies and Python version
 
-`pyne2001` works with both python 2.7 and python 3+, and does not depend on any external python libraries.
+`pyne2001` works with both python 2.7 and python 3+, and does not depend on any external python libraries. A FORTRAN compiler must be available on the system prior to installing the module.
 
 
 ### Installation
@@ -94,8 +94,6 @@ LOWERLIM                           If True, ModelDistance is a lower limit only
 - Input files are now all placed in `/bin`. Removed `/input` directory.
 
 - Removed `run_NE2001.pl`
-
-- FORTRAN code is now compiled with ```-ffpe-summary=none```, which suppresses messages related to floating point warnings. This makes parsing the output with python easier. (`Makefile`)
 
 - Changed compiler from f77 to gfortran (`Makefile`)
 
