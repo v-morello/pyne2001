@@ -5,12 +5,9 @@
 # Then type 'make pgm' to make the NE2001 interface 
 # or        'make lib' to meke the library.
 #
-FC      = gfortran
 RANLIB  = ranlib
 ARFLAGS = rc
-# Edit 07/01/2019 VM: -ffpe-summary=none suppresses messages related
-# to floating point exceptions, which makes python parsing easier
-FFLAGS  = -O -std=gnu -ffpe-summary=none
+FFLAGS  = -O -std=gnu
 LDFLAGS = -s
 #
 BINDIR = ../bin

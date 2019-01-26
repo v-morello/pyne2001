@@ -1,9 +1,15 @@
 language: python
 
-# Ubuntu Trusty (14.04) ships with gfortran 4.3 which does not have 
-# the -ffpe-summary compilation option
-# Ubuntu Xenial (16.04) ships with gcc 5.4.0 and all is fine
+branches:
+  only:
+    - master
+    - dev
+
 dist: xenial
+
+addons:
+  apt:
+    packages: ['gfortran']
 
 python:
   - "2.7"
@@ -11,10 +17,6 @@ python:
   - "3.5"
   - "3.6"
   - "3.7"
-
-before_install:
-  - sudo apt-get update
-  - sudo apt-get install -y gfortran
 
 before_script: make install
 

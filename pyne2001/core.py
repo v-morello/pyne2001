@@ -29,8 +29,8 @@ def _run_ne2001(glon, glat, dmd, ndir):
         cwd = os.getcwd()
         os.chdir(executable_dir)
         out = None
-        if dmd < 0:
-            raise ValueError("dmd cannot be negative")
+        if dmd < 1e-6:
+            raise ValueError("Input DM or distance must be larger than 1e-6")
         if not ndir in (-1, 1):
             raise ValueError("ndir must be -1 or 1")
 
@@ -48,7 +48,10 @@ def _parse_output(text):
     Parse the output of the NE2001 program into a dictionary.
     """
     lines = [line.strip() for line in text.strip().splitlines()]
-    lines = lines[6:] # Ignore comment lines and summary of inputs
+
+    # Ignore: summary of inputs, comment lines (starting with '#') and 
+    # any floating point exception warning messages at the end
+    lines = lines[6:20]
     items = {}
 
     # Check for leading '>' character on first output line when NE2001 has
